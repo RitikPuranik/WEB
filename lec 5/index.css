@@ -1,0 +1,23 @@
+h3{
+    /* background-color: brown; */
+    color: darkorange;
+}
+*{
+    background-color: darkkhaki;
+}
+.one{
+    color: darkblue;
+}
+#two{
+    color: black;
+}
+a[href='http://google.com']{
+    background-color: black;
+    color: white;
+}
+a[href^='https']{
+    color: chartreuse;
+}
+a[href$='in']{
+    background-color: brown;
+}
