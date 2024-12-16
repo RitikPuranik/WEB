@@ -1,0 +1,18 @@
+div p{
+    background-color: brown;
+}
+
+li:nth-of-type(1){
+    color: burlywood;
+}
+
+div{
+    background-color: gray;
+    height:100px;
+    width :100px;
+}
+div:hover{
+    color: chocolate;
+    border-radius: 50%;
+    transition: 2s;
+}
