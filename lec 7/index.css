@@ -1,0 +1,13 @@
+#parent{
+    background-color: brown;
+    height: 200vh;
+    width: 200vw;
+}
+#child{
+    background-color: darkkhaki;
+    height: 50%;
+    width: 50%;
+}
+li{
+    font-size: 2em;
+}
