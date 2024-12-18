@@ -1,0 +1,43 @@
+/* div:nth-of-type(1){
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    display: inline-block;
+}
+
+div:nth-of-type(2){
+    height: 200px;
+    width: 200px;
+    background-color: plum;
+    display: inline-block;
+    /* position: static; */
+    /* position: relative; */
+    /* position: absolute; */
+    /* position: fixed; 
+    top: 50px; */
+    /* left: 10px; */
+    /* bottom: 20px;
+} */
+/* div:nth-of-type(3){
+    height: 200px;
+    width: 200px;
+    background-color: purple;
+    display: inline-block;
+}  */
+  #parent{
+    height:200px;
+    width: 200px;
+    background-color: brown;
+    position:relative
+
+  }
+  #child{
+    height: 50px;
+    width: 50px;
+    background-color: blueviolet;
+    /* position: relative; */
+    position: absolute;
+    top: 20px;
+    left: 50px;
+
+  }
