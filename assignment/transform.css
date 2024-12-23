@@ -1,0 +1,40 @@
+body{
+    perspective: 900px;
+}
+#parent {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: 2s;
+    position: relative;
+    margin:50px auto;
+    transform-style: preserve-3d;
+}
+
+#child img{
+    /* height:300px; */
+    height: 100%;
+    width: 100%;
+}
+#child{
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    backface-visibility: hidden;
+}
+#child2{
+    background-color: brown;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* bottom: 304px; */
+    transform: rotateY(180deg);
+
+}
+#parent:hover{
+    transform: rotateY(180deg);
+
+}
