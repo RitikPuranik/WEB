@@ -1,0 +1,33 @@
+
+ div{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background:linear-gradient(blue ,red);
+    border: 10px solid;
+    transform-style: preserve-3d;
+    margin: auto;
+    animation-name: ball;
+    animation-duration: 900ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    /* animation: 900ms; */
+}
+
+@keyframes ball {
+    0%{
+        /* background-color: blue; */
+        transform: translateY(0vh);
+
+    }
+    /* 50%{
+        background-color: chocolate;
+        transform: translateY(50vh);
+    } */
+    100%{
+        /* background-color: cyan; */
+        transform: translateY(75vh)  rotate(360deg); 
+    }
+    
+}

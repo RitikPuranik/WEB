@@ -1,0 +1,28 @@
+div img{
+    height: 100px;
+    width: 100px;
+    background-color: brown;
+    /* transition: 3s0; */
+    animation-name: new;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+div:hover{
+    /* background-color:chocolate */
+}
+@keyframes new {
+    0%{
+        background-color: chartreuse;
+    }
+    50%{
+        background-color: crimson;
+        height: 300px;
+        width: 700px;
+        border-radius: 50%;
+    }
+    100%{
+        background-color: gray;
+        height: 600px;
+        width: 1000px;
+    }
+}
