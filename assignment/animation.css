@@ -1,6 +1,11 @@
-
- div{
+div{
+    display: flex;
+    justify-content: center;
+}
+ div img{
     height: 150px;
+    margin: auto;
+
     width: 150px;
     border-radius: 50%;
     background:linear-gradient(blue ,red);

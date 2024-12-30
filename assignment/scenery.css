@@ -1,0 +1,68 @@
+body{
+    background-color: skyblue;
+    position: relative;
+}
+ #sun{
+    display: flex;
+    justify-content: center;
+ }
+ #sun {
+    height: 150px;
+    margin: auto;
+
+    width: 150px;
+    border-radius: 50%;
+    background:linear-gradient(yellow ,red);
+    transform-style: preserve-3d;
+    margin: auto;
+    animation-name: ball;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    /* animation: 900ms; */
+}
+
+  img{
+    position: relative;
+    width: 100vw;
+    z-index: 1;
+    left: 100px;
+}
+#cloud img{
+    position: absolute;
+    width: 10vw;
+    z-index: 2;
+    bottom: 100vh;
+    /* left: 90vw; */
+    animation-name: cloud;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+@keyframes cloud {
+    0%{
+        transform: translateX(0vw);
+    }
+    100%{
+        transform: translateX(90vw);
+    }
+}
+/* #two img{
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+} */
+
+
+@keyframes ball {
+    0%{
+        transform: translateY(0vh);
+    }
+    
+    100%{
+        transform: translateY(75vh); 
+    }
+    
+}
