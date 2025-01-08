@@ -1,0 +1,29 @@
+/* #image
+{
+    height: 300px;
+    width: 300px;
+    background-image: url(https://images.unsplash.com/photo-1736281512973-d17ef05f9709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3fHx8ZW58MHx8fHx8);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: linear-gradient(red, blue);
+    background: linear-gradient(to right,red ,blue);
+    background: linear-gradient(to bottom right,red,yellow,green);
+    background: radial-gradient(red,blue);
+    background: radial-gradient(ellipse,red, yellow, green);
+    background: radial-gradient(circle at top left,red,blue);
+    background: conic-gradient(from 45deg,red,yellow,green,blue);
+    background: conic-gradient(from 0deg at 50% 50%,red,yellow,blue);
+    background: linear-gradient(to right,rgba(255,0,0,0.5),transparent);
+    background: repeating-linear-gradient(to right,red,yellow 10%,green 20%);
+
+} */
+:root{
+    --bb-color-red:red;
+    --bb-color-yellow:yellow;
+    --bb-size-setup:36px;
+}
+h2{
+    background-color: var(--bb-color-red);
+    font-size: var(--bb-size-setup);
+}
