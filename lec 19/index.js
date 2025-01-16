@@ -1,6 +1,6 @@
-let arr=[];
-let arr1=[];
-console.log(arr=arr1);
+// let arr=[];
+// let arr1=[];
+// console.log(arr=arr1);
 
 console.log(1 + 2 + '3'); //33 '33'
 console.log(false + false); // false => 0
@@ -71,14 +71,14 @@ console.log(typeof(a));
     
 // }
 
-//  let data=  arr.forEach((a,b,c)=>{
+//  let data=  arr.forEach((a,b,c)=>{     //it dosen't create a array
 //     console.log(a*2);
 //     // return a
     
 // }  )
 // console.log(data,"isko dekhoo");
 
-//  let newA=  arr.map((a,b,c)=>{
+//  let newA=  arr.map((a,b,c)=>{        //it creates a array
 //     // console.log(c);
 //     return a*2
     
@@ -95,17 +95,17 @@ console.log(typeof(a));
 // }
 // sum(5)
 
-let arr=[1,2,3,4,54,56,68,5,5]
+let arr=[1,2,3,4,54,56,68,5,5];
 
-//  let data=  arr.find((a,b,c)=>{
+//  let data=  arr.find((a,b,c)=>{          //it finds the value and stop
 //    return a==5
     
 
 
 // })
-console.log(data);
+// console.log(data);
 
-// let data1=  arr.filter((a,b,c)=>{
+// let data1=  arr.filter((a,b,c)=>{           
 //    return a==5
     
 
@@ -115,9 +115,9 @@ console.log(data);
 
 
 
-//  let filterValue=  arr.filter((a,b,c)=>{
-//     return a>10
+ let filterValue=  arr.filter((a,b,c)=>{     //it search the whole array
+    return a>10
     
 
-//  })
+ })
  console.log(filterValue);
