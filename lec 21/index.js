@@ -24,11 +24,12 @@
     
 // }
 
-sum()
-function sum(){
-    console.log('Hello');
-}
+// sum()
+// function sum(){
+//     console.log('Hello');
+// }
 
+outer()
 var outer=()=>{
     console.log('Hiiiiii');
 }
