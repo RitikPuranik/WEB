@@ -1,0 +1,23 @@
+div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    color: rgb(236, 86, 216);
+}
+h3{
+    color: rgb(238, 69, 196);
+}
+body{
+    background-color: rgb(241, 187, 125);
+}
+button{
+    position: relative;
+    top: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: chocolate;
+    color: aliceblue;
+    width: 80px;
+}

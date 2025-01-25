@@ -92,7 +92,7 @@ p{ position: relative;
     left: 48%;
     color: aliceblue;
 }
-#two div i{
+#two div:hover i{
     transform: scale(2.2);
     transition: 0.5s;
 }

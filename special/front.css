@@ -1,0 +1,19 @@
+div{
+    display: flex;
+    justify-content: center;
+    /* margin:30px auto; */
+}
+h1{
+    color:rgb(226, 68, 187);
+}
+button{
+    color: rgb(245, 84, 210);
+    background-color: aliceblue;
+    height: 30px;
+    margin: 30px;
+    border-radius: 10px;
+}
+img{
+    position: relative;
+    left: 500px;
+}

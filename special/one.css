@@ -1,0 +1,76 @@
+#two{
+    height: 90vh;
+    width: 75vw;
+    margin: 12px auto;
+    display: grid;
+    grid-template-columns:360px 360px 360px;
+    grid-gap: 30px;
+    position: relative;
+    margin-left: 90px;
+}
+#two img:hover{
+    /* opacity: 50%; */
+    transform: scale(1);
+}
+
+#two img{
+    height: 250px;   
+    width: 360px;
+    border-radius: 10px;
+}
+#img1:hover img{
+    /* background-color: brown; */
+    height: 300px;
+    width: 400px;
+    border-radius:10px ;
+    transition: 1s;
+}
+
+#img2:hover img{
+    /* background-color: rebeccapurple; */
+    height: 300px;
+    width: 400px;
+    border-radius:10px ;
+    transition: 1s;
+}
+
+#img3:hover img{
+    /* background-color: mediumspringgreen; */
+    height: 300px;
+    width: 400px;
+    border-radius:10px ;
+    transition: 1s;
+}
+
+#img4:hover img{
+    /* background-color: blueviolet; */
+    height: 300px;
+    width: 400px;
+    border-radius:10px ;
+    transition: 1s;
+}
+
+#img5:hover img{
+    /* background-color: burlywood; */
+    height: 300px;
+    width: 400px;
+    border-radius:10px ;
+    transition: 1s;
+} 
+body{
+    background-color: coral;
+}
+button{
+    position: relative;
+    top:80px;
+    left: 600px;
+    height: 30px;
+    width: 150px;
+    background-color: chocolate;
+    color: rgb(126, 7, 47);
+}
+h1{
+    display: flex;
+    justify-content: center;
+    color: rgb(143, 54, 83);
+}

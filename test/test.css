@@ -1,0 +1,68 @@
+body{
+    background:linear-gradient(to bottom right, rgb(245, 205, 231),pink);
+    height: 220vh;
+
+
+}
+#main{
+    position: relative;
+    left: 150px;
+    top: 50px;
+    height: 180vh;
+    width :80vw;
+    border-radius: 10px;
+background-color: rgb(255, 255, 255);
+display: flex;
+align-items: center;
+flex-direction: column;}
+
+
+#top{
+    display: flex;
+    align-items:first center;
+    justify-content: space-evenly;
+    width: 60vw;
+    position: relative;
+    /* left: 180px; */
+}
+#top h3{
+    color:grey;
+}
+h4{
+    color: grey;
+}
+#mid{
+    display: flex;
+    justify-content: center;
+}
+#sub{
+    display: grid;
+    grid-template-columns: 275px 275px 275px;
+    grid-template-rows: 400px 400px;
+    grid-gap: 10px;
+    height: 100vh;
+    width: 60vw;
+}
+#sub img{
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+}
+p{color: grey;
+
+}
+#one{
+    color: red;
+}
+#two{
+    color:blue
+}
+#three{
+    color: chocolate;
+}
+#four{
+    color: darkolivegreen;
+}
+#five{
+    color: darkorange;
+}
