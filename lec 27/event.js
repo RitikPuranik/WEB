@@ -50,7 +50,7 @@ inp1.addEventListener('input',(e)=>{
         body.style.backgroundColor='yellow'
         // let a=true
         if(a){
-            body.style.backgroundColor='yellow'
+            body.style.backgroundColor='purple'
              a=false
 
         }
