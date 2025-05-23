@@ -99,20 +99,20 @@
 
 
 
-//TO FINF THE SUM OF EVEN VALUES GREATER THAN 3 IN ARRAY
-let arr=[2,3,2,3,42,4,32,,5,2,5,7]
-let data=arr.filter((a,b,c)=>{
-    return a>3
-})
-console.log(data);
-let data1=data.filter((a,b,c)=>{
-    return a%2==0
-})
-console.log(data1)
-let sum =data1.reduce((a,b,c,d)=>{
-    return a+b                  
-},)  
-console.log(sum)
+// //TO FINF THE SUM OF EVEN VALUES GREATER THAN 3 IN ARRAY
+// let arr=[2,3,2,3,42,4,32,,5,2,5,7]
+// let data=arr.filter((a,b,c)=>{
+//     return a>3
+// })
+// console.log(data);
+// let data1=data.filter((a,b,c)=>{
+//     return a%2==0
+// })
+// console.log(data1)
+// let sum =data1.reduce((a,b,c,d)=>{
+//     return a+b                  
+// })  
+// console.log(sum)
 
 //REDUCED VERSION OF QUESTION ABOVE
 let data=arr.filter((a)=>{
