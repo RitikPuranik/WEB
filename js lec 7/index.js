@@ -50,7 +50,12 @@ console.log(rowSum);
 
 
 //COL WISE SUM
-    
+let colSum=arr1[0].map((value,index)=>{
+    return arr1.reduce((sum,row)=>{
+        return sum+row[index];
+    },0)
+})
+console.log(colSum);
 
 // MAX OF ARRAY
 arr1.flat()
