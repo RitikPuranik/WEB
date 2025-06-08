@@ -79,12 +79,13 @@ let arr2=[1,2,3,4,5,6]
 Array.prototype.myforEach=function(cb){
     for(var i=0;i<this.length;i++){
       var data=  cb(this[i],i,this)
-       res.push(data)
+       console.log(data)
         
     }
-    return res
 }
 
 let print=arr2.myforEach( (a)=>{
     return a
 } )
+
+
