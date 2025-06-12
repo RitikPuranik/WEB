@@ -38,3 +38,14 @@ step1(()=>{
         })
     })
 })
+
+
+
+//PROMISES
+let promise=new promise((res,rej)=>{
+    //res()
+    rej()
+})
+console.log(promise)
+
+
