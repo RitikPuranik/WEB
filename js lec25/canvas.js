@@ -11,6 +11,9 @@ let game = setInterval(()=>{
     
 },2)
 
+
+let randomCell=generateRandomCell()
+
 document.addEventListener("keydown",(e)=>{
     // console.log("keydown")
     if(e.key==="ArrowRight"){
@@ -35,8 +38,12 @@ function draw() {
     }
     pen.clearRect(0,0,700,400)
     for(let i of snakeCells){
+        pen.fillStyle="red"
         pen.fillRect(i[0],i[1],cell,cell)
     }
+
+    pen.fillStyle="green"
+    pen.fillRect(randomCell[0],randomCell[1],50,50)
 }
 
 
@@ -75,4 +82,12 @@ function update(){
     }
     snakeCells.push([newX,newY])
     snakeCells.shift()
+}
+
+
+function generateRandomCell(){
+    return[
+         Math.floor((Math.random()*650)/50)*50,                  //divide and multiply by 50 so the number 
+        Math.floor((Math.random()*350)/50)*50   
+    ]                                                           //comes will be multiple of 50 (size of snake)
 }
