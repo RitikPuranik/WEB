@@ -5,11 +5,12 @@ let snakeCells=[[0,0]]
 let cell=50;
 let direction="right"
 let gameOver=false;
+let score=0;
 let game = setInterval(()=>{
     draw();
     update();
     
-},2)
+},300)
 
 
 let randomCell=generateRandomCell()
@@ -33,6 +34,9 @@ document.addEventListener("keydown",(e)=>{
 function draw() {
     if(gameOver){
         clearInterval(game)
+        pen.fillStyle="red"
+        pen.font="40px sans-serif"
+        pen.fillText('Game Over',50,150)
         // alert("Game Over")
         return;
     }
@@ -44,6 +48,10 @@ function draw() {
 
     pen.fillStyle="green"
     pen.fillRect(randomCell[0],randomCell[1],50,50)
+
+    pen.fillStyle="black"
+    pen.font="50px Arial"
+    pen.fillText(`Score: ${score}`,500,40)
 }
 
 
@@ -53,35 +61,41 @@ function update(){
     let newX
     let newY
     if(direction=="right"){
-        newX=headX+cell/50
+        newX=headX+cell
         newY=headY
-        if(newX==660){
+        if(newX>660){
             gameOver=true
         }
     }
     else if(direction=="left"){
-        newX=headX-cell/50
+        newX=headX-cell
         newY=headY
-        if(newX==-1){
+        if(newX<0){
             gameOver=true
         }
     }
     else if(direction=="up"){
         newX=headX
-        newY=headY-cell/50
-        if(newY==-1){
+        newY=headY-cell
+        if(newY<0){
             gameOver=true
         }
     }
     else{
         newX=headX
-        newY=headY+cell/50
-        if(newY==360){
+        newY=headY+cell
+        if(newY>360){
             gameOver=true
         }
     }
     snakeCells.push([newX,newY])
-    snakeCells.shift()
+    if(newX==randomCell[0] && newY==randomCell[1]){
+        randomCell=generateRandomCell()
+        score+=1
+    }
+    else{
+        snakeCells.shift()
+    }
 }
 
 
