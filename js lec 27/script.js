@@ -20,13 +20,41 @@
 //     h3.style.color='red'
 // }
 
-let city ="delhi"
-let key="9f6290d6cda9a36a63755fadee71f83d";
-let ApiData=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`
+// let city ="delhi"
+// let key="9f6290d6cda9a36a63755fadee71f83d";
+// let ApiData=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`
 
-fetch(ApiData).then((res)=>{
-    return res.json()
-}).then((data)=>{
-    console.log(data)
+// fetch(ApiData).then((res)=>{
+//     return res.json()
+// }).then((data)=>{
+//     console.log(data)
     
+// })
+
+
+let btn=document.querySelector('button')
+btn.addEventListener('click',()=>{
+    getWeather()
 })
+
+function getWeather(){
+    let city=document.getElementById('city').value
+    let key="9f6290d6cda9a36a63755fadee71f83d"
+    let ApiData=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`
+    
+    fetch(ApiData).then((res)=>{
+        return res.json()
+    }).then((data)=>{
+        console.log(data.main.temp)
+        showData(data)
+    })
+}
+
+let show =document.querySelector('#weather')
+
+function showData(res){
+    let h2=document.createElement('h2')
+    h2.innerText=res.main.temp
+    show.append("weather is :",h2)
+} 
+    
