@@ -1,45 +1,13 @@
 import React from 'react'
-
+import Day1 from './Day1'
+import Day2 from './Day2'
 const App = () => {
-
-  function fun(){
-    console.log('hello')
-  }
-
-  return(
+  return (
     <div>
-      <button onClick={fun}>click me</button>
+        {/* <Day1 /> */}
+        <Day2 />
     </div>
   )
-
-
-
-
-  // let arr=[1,2,3,4,5]
-  // return (
-  //   <div>App
-  //     {
-  //       arr.map((a,b,c)=>{
-  //         return(<>
-  //           <h1>{a}</h1>
-  //         </>)
-  //       })
-  //     }
-      
-  //      </div>
-  // )
-
-
-
 }
 
-
-// const Home = () => {
-//   return (
-//     <div>Home</div>
-//   )
-// }
-
-
-// export {Home}
 export default App
