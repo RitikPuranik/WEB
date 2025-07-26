@@ -1,0 +1,10 @@
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    background-color: brown;
+    align-items: center;
+}
+li{
+    color: white;
+}
