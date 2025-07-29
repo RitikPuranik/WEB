@@ -6,9 +6,15 @@ import Day2 from './Day2'
 import Day3 from './Day3'
 import Day4 from './Day4'
 import Day5 from './Day5'
+
 import NavBar from './Navbar'
 import Home from './Home'
 import Contact from './Contact'
+
+import Login from './Login'
+import Signup from './Signup'
+
+import Day7 from './Day7'
 
 const App = () => {
   return (
@@ -18,11 +24,20 @@ const App = () => {
         {/* <Day3 /> */}
         {/* <Day4 /> */}
         {/* <Day5 /> */}
-        <NavBar/>
+
+        {/* <NavBar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path='/Contact' element={<Contact/>}/>
-        </Routes>
+        </Routes> */}
+
+        {/* <Routes>
+          <Route path='/Login' element={<Login/>} />
+          <Route path='/Signup' element={<Signup/>} />
+        </Routes> */}
+
+        <Day7 />
+
     </div>
   )
 }
