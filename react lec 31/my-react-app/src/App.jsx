@@ -16,6 +16,8 @@ import Signup from './Signup'
 
 import Day7 from './Day7'
 
+import Day8 from './Day8'
+
 const App = () => {
   return (
     <div>
@@ -36,7 +38,9 @@ const App = () => {
           <Route path='/Signup' element={<Signup/>} />
         </Routes> */}
 
-        <Day7 />
+        {/* <Day7 /> */}
+
+        <Day8 />
 
     </div>
   )
