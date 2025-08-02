@@ -4,12 +4,15 @@ import './index.css'
 import App from './App.jsx'
 // import { Home } from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
+import Context from './Context.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <Context.Provider value={"ritikkkkkk"}>
+        <App />
+      </Context.Provider>
     </BrowserRouter>
     
   </StrictMode>,

@@ -15,8 +15,8 @@ import Login from './Login'
 import Signup from './Signup'
 
 import Day7 from './Day7'
-
 import Day8 from './Day8'
+import Day9 from './Day9'
 
 const App = () => {
   return (
@@ -40,7 +40,9 @@ const App = () => {
 
         {/* <Day7 /> */}
 
-        <Day8 />
+        {/* <Day8 /> */}
+
+        <Day9 />
 
     </div>
   )
