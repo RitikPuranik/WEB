@@ -13,7 +13,7 @@ const Day5 = ({input,SetInput,cartData,SetCartData}) => {
 
         }).then((data)=>{
             SetInput(data.recipes)
-            console.log(data.recipes,"mai hu kaun");   
+            console.log(data.recipes,"mai hu kaun");
         })
         
     },[])
