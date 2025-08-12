@@ -15,10 +15,17 @@ const ApiShowData = () => {
 
     {
         state.data.map((a,index)=>{
+          
+          let inCart=state.cartData.find(item=>item.id===a.id)
+
+
             return(<div id='card'  >
                 <img  src={a.image}/>
                 <p>{a.name}</p>
-                <button onClick={()=>{dispatch({type:"addToCart",payload:a})}}>click</button>
+
+                {
+                  inCart?(<div> <button>+</button> <button>-</button></div>):(<button onClick={()=>{dispatch({type:"addToCart",payload:a})}}>click</button>)
+                }
 
               </div>)
         })
