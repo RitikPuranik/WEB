@@ -4,7 +4,7 @@ import './ApiShow.css'
 import { Link } from 'react-router-dom'
 const ApiShowData = () => {
      let  {state,dispatch}=     useContext(Context)
-    //  console.log(data,"isko dekhoo");
+     console.log(state.data,"isko dekhoo");
   return (
     <>   
     <Link to={'/cart'}>
@@ -12,6 +12,10 @@ const ApiShowData = () => {
     </Link>
     <button onClick={()=>dispatch({type:"max"})}>max</button>
     <button onClick={()=>dispatch({type:"min"})}>min</button>
+    
+
+    <input type="name" value={state.input} onChange={(e)=>{dispatch({type:"add",payload:{value:e.target.value}})}} />
+    <button onClick={()=>dispatch({type:"search",payload:{value:state.input}})}>search</button>
      
     <div id='parent_Card'>  
 

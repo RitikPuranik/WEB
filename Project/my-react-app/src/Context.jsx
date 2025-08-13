@@ -4,7 +4,8 @@ import { createContext, useReducer, useEffect } from 'react'
 
  const initialData={
     data:[],
-    cartData:[]
+    cartData:[],
+    input:""
  }
 
  function reduser(state,action){
@@ -78,6 +79,30 @@ import { createContext, useReducer, useEffect } from 'react'
         return{
             ...state,
             data:[...state.data.sort((a,b)=>a.rating-b.rating)]
+        }
+    }
+    else if(action.type === "add"){
+        return{
+            ...state,
+            input:action.payload.value
+        }
+    }
+    else if(action.type==="search"){
+        if(state.input!=""){
+            return{
+                ...state,
+                data:state.data.filter((data1)=>{
+                    return data1.name.toLowerCase().includes(action.payload.value.toLowerCase())
+                }),
+                data:state.data.filter((data1)=>{
+                    return data1.cuisine.toLowerCase().includes(action.payload.value.toLowerCase())
+                }),
+
+                input:""
+            }
+        }
+        else{
+            return state
         }
     }
     else{
