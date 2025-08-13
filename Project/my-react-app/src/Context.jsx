@@ -53,18 +53,12 @@ import { createContext, useReducer, useEffect } from 'react'
         }
 
     }
-
     else if(action.type==="decrement"){
         return{
             ...state,
             cartData:state.cartData.map(item=>item.id===action.payload?{...item,quantity:item.quantity-1}:item).filter(a=>a.quantity>0)
         }
     }
-
-
-
-
-
     else if(action.type=="delet"){
         return{
             ...state,
@@ -72,6 +66,18 @@ import { createContext, useReducer, useEffect } from 'react'
                 return key!==action.payload
 
             })
+        }
+    }
+    else if(action.type=="max"){
+        return{
+            ...state,
+            data:[...state.data.sort((a,b)=>b.rating-a.rating)]
+        }
+    }
+    else if(action.type=="min"){
+        return{
+            ...state,
+            data:[...state.data.sort((a,b)=>a.rating-b.rating)]
         }
     }
     else{

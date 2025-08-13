@@ -10,6 +10,8 @@ const ApiShowData = () => {
     <Link to={'/cart'}>
     <button>Cart</button>
     </Link>
+    <button onClick={()=>dispatch({type:"max"})}>max</button>
+    <button onClick={()=>dispatch({type:"min"})}>min</button>
      
     <div id='parent_Card'>  
 
