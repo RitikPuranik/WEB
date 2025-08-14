@@ -2,15 +2,17 @@ import React from 'react'
 import ApiShowData from './ApiShowData'
 import { Route, Routes } from 'react-router-dom'
 import Cart from './Cart'
+import Form from './Form'
 
 const App = () => {
   return (
     <div>
      
-      <Routes>
+      {/* <Routes>
         <Route  path='/' element ={<ApiShowData/>}/>
         <Route  path='/cart' element ={<Cart/>}/>
-      </Routes>
+      </Routes> */}
+      <Form />
     </div>
   )
 }
