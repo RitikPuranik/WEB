@@ -1,18 +1,39 @@
-import React from 'react'
-import ApiShowData from './ApiShowData'
-import { Route, Routes } from 'react-router-dom'
-import Cart from './Cart'
-import Form from './Form'
+// import React from 'react'
+// import ApiShowData from './ApiShowData'
+// import { Route, Routes } from 'react-router-dom'
+// import Cart from './Cart'
+// import Form from './Form'
 
+// const App = () => {
+//   return (
+//     <div>
+     
+//       {/* <Routes>
+//         <Route  path='/' element ={<ApiShowData/>}/>
+//         <Route  path='/cart' element ={<Cart/>}/>
+//       </Routes> */}
+//       <Form />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import React from 'react'
+import Home from './Home'
+import { Route, Routes } from 'react-router-dom'
+import UserDetails from './UserDetails'
 const App = () => {
   return (
     <div>
+      <Routes >  
      
-      {/* <Routes>
-        <Route  path='/' element ={<ApiShowData/>}/>
-        <Route  path='/cart' element ={<Cart/>}/>
-      </Routes> */}
-      <Form />
+      <Route  path='/'   element={ <Home/>}/>
+      <Route  path='/user/:id'   element={ <UserDetails/>}/>
+
+      </Routes>
+      
     </div>
   )
 }
