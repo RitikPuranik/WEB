@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+//dyanmic routing
+//usenavigate
+
 const Home = () => {
       let navigate=  useNavigate()
     let users=[{id:1,name:"rimi"},{id:2,name:"ritik"},{id:3,name:"priyal"}]

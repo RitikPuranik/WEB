@@ -1,10 +1,13 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
+//dynamic routing
+//useParams()
+
 const UserDetails = () => {
     let users=[{id:1,name:"rimi"},{id:2,name:"ritik"},{id:3,name:"priyal"}]
 
-   let {id}=     useParams()
+   let {id}=useParams()
 
        let userData=   users.find((a)=>{
         return a.id==id
