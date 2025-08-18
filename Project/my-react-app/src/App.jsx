@@ -78,32 +78,78 @@
 
 
 
-//memo functionn
-//
-import React, { memo, useState } from 'react'
+// //memo functionn
+// //
+// import React, { memo, useState } from 'react'
+
+// const App = () => {
+//   let [count,Setcount]=useState(0);
+//   console.log("Parent render")
+//   return (
+    
+//     <div>
+//       <h1>{count}</h1>
+//       <button onClick={()=>Setcount(count+1)}>click</button>
+//       <MemoizedChild />
+//     </div>
+    
+//   )
+// }
+
+// export default App
+
+// //memo is used to avoid the re-rendering of the component
+// //this component is used only once until and unless it is used by us
+// //if prop has been passed to memo functon then the component will be run only when the prop has been changed
+// let MemoizedChild=memo(function ChildApp(){
+//   console.log("child render")
+//   return(
+//     <div>Child</div>
+//   )
+// })
+
+
+import React, { memo, useCallback, useMemo, useState } from 'react'
 
 const App = () => {
-  let [count,Setcount]=useState(0);
-  console.log("Parent render")
+  let [count, setCount] = useState(0)
+  let [state, setState] = useState(0)
+
+  console.log("apppp wali fileeeee");
+
+  //  let even=   useMemo(()=>{
+  //   return ()=>{
+  //     console.log("hello");
+      
+  //   }
+  // },[])
+
+ let even=  useCallback(()=>{
+  console.log("hello");
+ },[])
   return (
-    
     <div>
-      <h1>{count}</h1>
-      <button onClick={()=>Setcount(count+1)}>click</button>
-      <MemoizedChild />
+      {/* <h1>{val}</h1> */}
+      <h1>appp</h1>
+      <h2 >{count}</h2>
+      <button onClick={() => setCount(count + 1)}>click</button>
+      <button onClick={() => setState(state - 1)}>--</button>
+
+      {/* <ChildApp /> */}
+      <MemoizedChild   even={even} />
     </div>
-    
   )
 }
 
 export default App
 
-//memo is used to avoid the re-rendering of the component
-//this component is used only once until and unless it is used by us
-//if prop has been passed to memo functon then the component will be run only when the prop has been changed
-let MemoizedChild=memo(function ChildApp(){
-  console.log("child render")
-  return(
-    <div>Child</div>
+
+  let MemoizedChild=   memo(function ChildApp() {
+    console.log("childdddddd wali fileeeee");
+  return (
+    <div>Childddddd
+      <h2></h2>
+    </div>
   )
-})
+
+})  
