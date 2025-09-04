@@ -109,47 +109,62 @@
 // })
 
 
-import React, { memo, useCallback, useMemo, useState } from 'react'
+
+
+// //CALLBACK FUNCTION
+// import React, { memo, useCallback, useState } from 'react'
+
+// const App = () => {
+//   let [count, setCount] = useState(0)
+//   let [state, setState] = useState(0)
+
+//   console.log("apppp wali fileeeee");
+
+//   //  let even=   useMemo(()=>{
+//   //   return ()=>{
+//   //     console.log("hello");
+      
+//   //   }
+//   // },[])
+
+//  let even=  useCallback(()=>{
+//   console.log("hello");
+//  },[])
+//   return (
+//     <div>
+//       {/* <h1>{val}</h1> */}
+//       <h1>appp</h1>
+//       <h2 >{count}</h2>
+//       <button onClick={() => setCount(count + 1)}>click</button>
+//       <button onClick={() => setState(state - 1)}>--</button>
+
+//       {/* <ChildApp /> */}
+//       <MemoizedChild   even={even} />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+//   let MemoizedChild=   memo(function ChildApp() {
+//     console.log("childdddddd wali fileeeee");
+//   return (
+//     <div>Childddddd
+//       <h2></h2>
+//     </div>
+//   )
+
+// })  
+
+
+
+import React from 'react'
 
 const App = () => {
-  let [count, setCount] = useState(0)
-  let [state, setState] = useState(0)
-
-  console.log("apppp wali fileeeee");
-
-  //  let even=   useMemo(()=>{
-  //   return ()=>{
-  //     console.log("hello");
-      
-  //   }
-  // },[])
-
- let even=  useCallback(()=>{
-  console.log("hello");
- },[])
   return (
-    <div>
-      {/* <h1>{val}</h1> */}
-      <h1>appp</h1>
-      <h2 >{count}</h2>
-      <button onClick={() => setCount(count + 1)}>click</button>
-      <button onClick={() => setState(state - 1)}>--</button>
-
-      {/* <ChildApp /> */}
-      <MemoizedChild   even={even} />
-    </div>
+    <div>App</div>
   )
 }
 
 export default App
-
-
-  let MemoizedChild=   memo(function ChildApp() {
-    console.log("childdddddd wali fileeeee");
-  return (
-    <div>Childddddd
-      <h2></h2>
-    </div>
-  )
-
-})  
