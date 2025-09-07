@@ -37,45 +37,45 @@
 //     }
 // })
 
-// //To read a file using Async
-// fs.readFile("index2.txt","utf-8",function(err,data){
-//     if(err){
-//         console.log(err)
-//     }
-//     else{
-//         console.log(data)
-//     }
-// })
+//To read a file using Async
+fs.readFile("index2.txt","utf-8",function(err,data){
+    if(err){
+        console.log(err)
+    }
+    else{
+        console.log(data)
+    }
+})
 
-// //To append something in a file using Async
-// fs.appendFile("index2.txt","hellooooo",function(err){
-//     if(err){
-//         console.log(err)
-//     }
-//     else{
-//         console.log("File appended")
-//     }
-// })
+//To append something in a file using Async
+fs.appendFile("index2.txt","hellooooo",function(err){
+    if(err){
+        console.log(err)
+    }
+    else{
+        console.log("File appended")
+    }
+})
 
-// //To rename a file using Async
-// fs.rename("index2.txt","index3.txt",function(err){
-//     if(err){
-//         console.log(err)
-//     }
-//     else{
-//         console.log("File renamed")
-//     }
-// })
+//To rename a file using Async
+fs.rename("index2.txt","index3.txt",function(err){
+    if(err){
+        console.log(err)
+    }
+    else{
+        console.log("File renamed")
+    }
+})
 
-// //To delete a file using Async
-// fs.unlink("index3.txt",function(err){
-//     if(err){
-//         console.log(err)
-//     }
-//     else{
-//         console.log("File deleted")
-//     }
-// })
+//To delete a file using Async
+fs.unlink("index3.txt",function(err){
+    if(err){
+        console.log(err)
+    }
+    else{
+        console.log("File deleted")
+    }
+})
 
 
 
