@@ -57,25 +57,25 @@ fs.appendFile("index2.txt","hellooooo",function(err){
     }
 })
 
-//To rename a file using Async
-fs.rename("index2.txt","index3.txt",function(err){
-    if(err){
-        console.log(err)
-    }
-    else{
-        console.log("File renamed")
-    }
-})
+// //To rename a file using Async
+// fs.rename("index2.txt","index3.txt",function(err){
+//     if(err){
+//         console.log(err)
+//     }
+//     else{
+//         console.log("File renamed")
+//     }
+// })
 
-//To delete a file using Async
-fs.unlink("index3.txt",function(err){
-    if(err){
-        console.log(err)
-    }
-    else{
-        console.log("File deleted")
-    }
-})
+// //To delete a file using Async
+// fs.unlink("index3.txt",function(err){
+//     if(err){
+//         console.log(err)
+//     }
+//     else{
+//         console.log("File deleted")
+//     }
+// })
 
 
 
