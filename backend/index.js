@@ -37,25 +37,25 @@
 //     }
 // })
 
-//To read a file using Async
-fs.readFile("index2.txt","utf-8",function(err,data){
-    if(err){
-        console.log(err)
-    }
-    else{
-        console.log(data)
-    }
-})
+// //To read a file using Async
+// fs.readFile("index2.txt","utf-8",function(err,data){
+//     if(err){
+//         console.log(err)
+//     }
+//     else{
+//         console.log(data)
+//     }
+// })
 
-//To append something in a file using Async
-fs.appendFile("index2.txt","hellooooo",function(err){
-    if(err){
-        console.log(err)
-    }
-    else{
-        console.log("File appended")
-    }
-})
+// //To append something in a file using Async
+// fs.appendFile("index2.txt","hellooooo",function(err){
+//     if(err){
+//         console.log(err)
+//     }
+//     else{
+//         console.log("File appended")
+//     }
+// })
 
 // //To rename a file using Async
 // fs.rename("index2.txt","index3.txt",function(err){
@@ -85,12 +85,170 @@ fs.appendFile("index2.txt","hellooooo",function(err){
 
 
 
-let http = require('http');
+// let http = require('http');
 
-let server = http.createServer(function(req,res){
-    res.end("hello from server")
-})
+// let server = http.createServer(function(req,res){
+//     res.end("hello from server")
+// })
 
-server.listen(3000, function(){
-    console.log("Server is running on port 3000")
-})
+// server.listen(3000, function(){
+//     console.log("Server is running on port 3000")
+// })
+
+
+
+
+
+// let express = require('express');
+// let fs = require('fs');
+
+// let app = express();
+
+// // Home route
+// app.get('/', (req, res) => {
+//     res.send("Hello from server");
+// });
+
+// // Create a file
+// app.get("/create", (req, res) => {
+//     fs.writeFileSync("index.txt", "Happy Birthday Aanya");
+//     res.send("File created");
+// });
+
+// // Read file content
+// app.get("/read", (req, res) => {
+//     if (fs.existsSync("index.txt")) {
+//         let text = fs.readFileSync("index.txt");
+//         res.send(text.toString());
+//     } else {
+//         res.send("File does not exist");
+//     }
+// });
+
+// // Append text to file
+// app.get("/append", (req, res) => {
+//     if (fs.existsSync("index.txt")) {
+//         fs.appendFileSync("index.txt", "\nHave a wonderful day!");
+//         res.send("Text appended");
+//     } else {
+//         res.send("File does not exist to append");
+//     }
+// });
+
+// // Delete file
+// app.get("/delete", (req, res) => {
+//     if (fs.existsSync("index.txt")) {
+//         fs.unlinkSync("index.txt");
+//         res.send("File deleted");
+//     } else {
+//         res.send("File does not exist to delete");
+//     }
+// });
+
+// // Start the server
+// app.listen(3000, () => {
+//     console.log("Server running on http://localhost:3000");
+// });
+
+
+
+// let express = require('express')
+// let app = express();
+// app.listen(3000, () => {
+//     console.log("Server running on http://localhost:3000");
+// })
+
+
+
+let express=  require("express")
+      let app=    express()
+      app.use(express.json())
+      let fs=    require("fs")
+      let arr=[1,2,3,4,5,6,5,4,34,3,11,3,4,55,56]
+
+      app.get("/:data",(req,res)=>{
+        let {data}=req.params
+          let val=  arr.filter((a)=>{
+            return data==a
+
+           })
+
+        console.log(val);
+        res.send(val)
+  
+      //  /
+      })
+              
+      // app.get('/',(req,res)=>{
+      //   res.send("hello")
+
+      // })
+      // http://localhost:4000/search?name=anu&&lastname=jain
+      // app.get("/search",(req,res)=>{
+      //   let data=   req.query
+      //   console.log(data);
+        
+      //  let {a}=   req.params
+      //  console.log(a);
+      //   let val=   arr.filter((data)=>{
+      //       return data==a
+
+      //     })
+      //     res.send(val)
+       
+     //    npx nodemon start
+
+    //  let {ani}=    req.params
+    //     res.send(ani)
+        // console.log(req);
+        // res.send(req)
+        // req.send("heee")
+      // })
+    //   app.get("/cat",(req,res)=>{
+    //     res.send("cat")
+    //     // console.log(req);
+    //     // res.send(req)
+    //     // req.send("heee")
+
+    //   })
+//  srverrrrrrr    
+// app.get("/",()=>{
+//   res
+// })
+//     app.get("/read",(req,res)=>{
+//          let data=  fs.readFileSync('index.txt')
+//       res.send(data.toString())
+//     })
+
+//     app.post("/creat",(req,res)=>{
+//          let data=    req.body
+//         //  console.log(data);
+//         fs.writeFileSync("index.txt",JSON.stringify(data))
+//       res.send("hello mai post req hu ")
+//     })
+
+//     app.delete("/remove",(req,res)=>{
+//       fs.unlinkSync("index.txt")
+//       res.send("data delet ho chuka haiii")
+
+//     })
+    // app.post ,app.patch app.delete
+
+    // https://www.flipkart.com/
+      app.listen(4000,()=>{
+        console.log("server running  on 4000");
+
+      })
+
+
+
+
+
+// let data={
+//     ani:"cat"
+// }
+// let {ani}=data
+
+// console.log();
+
+         
