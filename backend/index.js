@@ -160,24 +160,24 @@
 
 
 
-let express=  require("express")
-      let app=    express()
-      app.use(express.json())
-      let fs=    require("fs")
-      let arr=[1,2,3,4,5,6,5,4,34,3,11,3,4,55,56]
+// let express=  require("express")
+//       let app=    express()
+//       app.use(express.json())
+//       let fs=    require("fs")
+//       let arr=[1,2,3,4,5,6,5,4,34,3,11,3,4,55,56]
 
-      app.get("/:data",(req,res)=>{
-        let {data}=req.params
-          let val=  arr.filter((a)=>{
-            return data==a
+//       app.get("/:data",(req,res)=>{
+//         let {data}=req.params
+//           let val=  arr.filter((a)=>{
+//             return data==a
 
-           })
+//            })
 
-        console.log(val);
-        res.send(val)
+//         console.log(val);
+//         res.send(val)
   
-      //  /
-      })
+//       //  /
+//       })
               
       // app.get('/',(req,res)=>{
       //   res.send("hello")
@@ -235,10 +235,10 @@ let express=  require("express")
     // app.post ,app.patch app.delete
 
     // https://www.flipkart.com/
-      app.listen(4000,()=>{
-        console.log("server running  on 4000");
+      // app.listen(4000,()=>{
+      //   console.log("server running  on 4000");
 
-      })
+      // })
 
 
 
@@ -252,3 +252,39 @@ let express=  require("express")
 // console.log();
 
          
+
+
+
+//new class 
+
+let express = require("express");
+let app = express();
+let fs = require("fs");
+
+// Middleware to parse JSON body
+app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.post("/create", (req, res) => {
+    let data = req.body;
+    fs.writeFileSync("index.txt", data.msg);
+    res.send("File created");
+});
+
+app.patch("/edit", (req, res) => {
+    let dataForEdit = req.body;
+    fs.appendFileSync("index.txt", dataForEdit.msg);
+    res.send("File updated");
+});
+
+app.delete("/", (req, res) => {
+    fs.unlinkSync("index.txt");
+    res.send("File deleted");
+});
+
+app.listen(4000, () => {
+    console.log('Example app listening on port 4000!');
+});
