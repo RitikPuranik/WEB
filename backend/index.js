@@ -255,36 +255,78 @@
 
 
 
-//new class 
+// //new class 
 
-let express = require("express");
-let app = express();
-let fs = require("fs");
+// let express = require("express");
+// let app = express();
+// let fs = require("fs");
 
-// Middleware to parse JSON body
-app.use(express.json());
+// // Middleware to parse JSON body
+// app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+// app.get('/', (req, res) => {
+//     res.send('Hello World!');
+// });
 
-app.post("/create", (req, res) => {
-    let data = req.body;
-    fs.writeFileSync("index.txt", data.msg);
-    res.send("File created");
-});
+// app.post("/create", (req, res) => {
+//     let data = req.body;
+//     fs.writeFileSync("index.txt", data.msg);
+//     res.send("File created");
+// });
 
-app.patch("/edit", (req, res) => {
-    let dataForEdit = req.body;
-    fs.appendFileSync("index.txt", dataForEdit.msg);
-    res.send("File updated");
-});
+// app.patch("/edit", (req, res) => {
+//     let dataForEdit = req.body;
+//     fs.appendFileSync("index.txt", dataForEdit.msg);
+//     res.send("File updated");
+// });
 
-app.delete("/", (req, res) => {
-    fs.unlinkSync("index.txt");
-    res.send("File deleted");
-});
+// app.delete("/", (req, res) => {
+//     fs.unlinkSync("index.txt");
+//     res.send("File deleted");
+// });
 
-app.listen(4000, () => {
-    console.log('Example app listening on port 4000!');
-});
+// app.listen(4000, () => {
+//     console.log('Example app listening on port 4000!');
+// });
+
+
+
+
+
+// new class 
+
+let express= require("express")
+ let app=    express()
+ let fs=   require('fs')
+ let cors=  require('cors')
+ app.use(express.json())
+ app.use(express.urlencoded({extended:true}))
+ app.use(cors())
+
+
+ app.get('/',(req,res)=>{
+  // res.send("hello")
+  //  let data=   fs.readFileSync("index.html")
+   res.send(data.toString())
+
+ })
+ app.post("/create",(req,res)=>{
+
+     console.log(req.body);
+    
+  // fs.writeFileSyn =c("index.html",data.msg)
+  res.send(req.body)
+
+ })
+ app.post("/login",(req,res)=>{
+
+    let loginInfo=   req.body
+  res.send(loginInfo)
+
+
+ })
+
+ app.listen(4000,()=>{
+  console.log("server running on port no 4000");
+  
+ })
