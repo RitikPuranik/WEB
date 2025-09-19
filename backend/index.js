@@ -293,40 +293,76 @@
 
 
 
-// new class 
+// // new class 
 
-let express= require("express")
- let app=    express()
- let fs=   require('fs')
- let cors=  require('cors')
- app.use(express.json())
- app.use(express.urlencoded({extended:true}))
- app.use(cors())
+// let express= require("express")
+//  let app=    express()
+//  let fs=   require('fs')
+//  let cors=  require('cors')
+//  app.use(express.json())
+//  app.use(express.urlencoded({extended:true}))
+//  app.use(cors())
 
 
- app.get('/',(req,res)=>{
-  // res.send("hello")
-  //  let data=   fs.readFileSync("index.html")
-   res.send(data.toString())
+//  app.get('/',(req,res)=>{
+//   // res.send("hello")
+//   //  let data=   fs.readFileSync("index.html")
+//    res.send(data.toString())
 
- })
- app.post("/create",(req,res)=>{
+//  })
+//  app.post("/create",(req,res)=>{
 
-     console.log(req.body);
+//      console.log(req.body);
     
-  // fs.writeFileSyn =c("index.html",data.msg)
-  res.send(req.body)
+//   // fs.writeFileSyn =c("index.html",data.msg)
+//   res.send(req.body)
 
- })
- app.post("/login",(req,res)=>{
+//  })
+//  app.post("/login",(req,res)=>{
 
-    let loginInfo=   req.body
-  res.send(loginInfo)
+//     let loginInfo=   req.body
+//   res.send(loginInfo)
 
 
- })
+//  })
 
- app.listen(4000,()=>{
-  console.log("server running on port no 4000");
+//  app.listen(4000,()=>{
+//   console.log("server running on port no 4000");
   
- })
+//  })
+
+
+
+let express = require("express")
+let app = express()
+app.use(express.json())
+const User= require('./user')
+   let mongoose=    require("mongoose")
+   mongoose.connect("mongodb://127.0.0.1:27017/onLineClass").then(()=>{
+    console.log("db....");
+    
+
+   }).catch((err)=>{
+    console.log(err);
+    
+
+   })
+app.get('/', (req, res) => {
+  res.send("hello")
+})
+  
+app.post('/user', async(req,res)=>{
+    
+  let {name,email,passWord}= req.body 
+  let userData=    new User({
+    name,
+    email,
+    passWord
+  })
+  await  userData.save()
+  res.send({msg:"user saved  succuessfulyyy"})
+})
+app.listen(4000, () => {
+  console.log("server running on port no 4000");
+
+})
