@@ -336,17 +336,17 @@
 let express = require("express")
 let app = express()
 app.use(express.json())
+const bcrypt = require('bcryptjs');
+
+
 const User= require('./user')
    let mongoose=    require("mongoose")
-   mongoose.connect("mongodb://127.0.0.1:27017/onLineClass").then(()=>{
-    console.log("db....");
+   mongoose.connect("mongodb://127.0.0.1:27017/onLineClass")
+  .then(() => console.log("db connected..."))
+  .catch(err => console.log(err));
+
     
 
-   }).catch((err)=>{
-    console.log(err);
-    
-
-   })
 app.get('/', (req, res) => {
   res.send("hello")
 })
@@ -364,5 +364,30 @@ app.post('/user', async(req,res)=>{
 })
 app.listen(4000, () => {
   console.log("server running on port no 4000");
+
+})
+
+app.post("/signUp",  async(req,res)=>{
+
+  let {name,email,passWord}=      req.body
+        
+      const existingUser=      await  User.findOne({email})
+      if(existingUser){
+      return res.send({msg:"User already exists"})
+      }
+      else{
+            let hashedP=     await bcrypt.hash(passWord,10)
+            console.log(hashedP);
+            let newUser=     new User({
+              name:name,
+              email:email,
+              passWord:hashedP
+            })
+            await   newUser.save()
+            res.send({msg:"user registered"} )
+            
+
+
+      }
 
 })
