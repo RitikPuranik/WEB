@@ -369,25 +369,42 @@ app.listen(4000, () => {
 
 app.post("/signUp",  async(req,res)=>{
 
-  let {name,email,passWord}=      req.body
+  let {name,email,passWord}=req.body
         
-      const existingUser=      await  User.findOne({email})
-      if(existingUser){
-      return res.send({msg:"User already exists"})
-      }
-      else{
-            let hashedP=     await bcrypt.hash(passWord,10)
-            console.log(hashedP);
-            let newUser=     new User({
-              name:name,
-              email:email,
-              passWord:hashedP
-            })
-            await   newUser.save()
-            res.send({msg:"user registered"} )
-            
-
-
-      }
-
+  const existingUser=await  User.findOne({email})
+  if(existingUser){
+    return res.send({msg:"User already exists"})
+  }
+  else{
+    let hashedP=await bcrypt.hash(passWord,10)
+    console.log(hashedP);
+    let newUser=     new User({
+      name:name,
+      email:email,
+      passWord:hashedP
+    })
+    await   newUser.save()
+    res.send({msg:"user registered"} )
+  }
 })
+
+app.post("/login", async (req, res) => {
+  try {
+    let { email, passWord } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ msg: "User not found!!!" });
+    }
+
+    const isMatch = await bcrypt.compare(passWord, user.passWord);
+    if (!isMatch) {
+      return res.status(400).json({ msg: "Invalid credentials" });
+    }
+
+    res.json({ msg: "Login successful" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
