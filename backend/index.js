@@ -337,6 +337,7 @@ let express = require("express")
 let app = express()
 app.use(express.json())
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 
 const User= require('./user')
@@ -369,7 +370,7 @@ app.listen(4000, () => {
 
 app.post("/signUp",  async(req,res)=>{
 
-  let {name,email,passWord}=req.body
+  let {name,email,passWord,role}=req.body
         
   const existingUser=await  User.findOne({email})
   if(existingUser){
@@ -378,33 +379,63 @@ app.post("/signUp",  async(req,res)=>{
   else{
     let hashedP=await bcrypt.hash(passWord,10)
     console.log(hashedP);
-    let newUser=     new User({
+    let newUser = new User({
       name:name,
       email:email,
-      passWord:hashedP
+      passWord:hashedP,
+      role:role || "user"
     })
     await   newUser.save()
     res.send({msg:"user registered"} )
   }
 })
 
-app.post("/login", async (req, res) => {
-  try {
-    let { email, passWord } = req.body;
-
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ msg: "User not found!!!" });
-    }
-
-    const isMatch = await bcrypt.compare(passWord, user.passWord);
-    if (!isMatch) {
-      return res.status(400).json({ msg: "Invalid credentials" });
-    }
-
-    res.json({ msg: "Login successful" });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ msg: "Server error" });
+app.post("/login", async(req,res)=>{
+  let secreateKey = "JDNFNHIUWHFIWWIU"
+  let {email,passWord} = req.body
+  // rbac
+  let user = await User.findOne({email})
+  if(!user){
+  return res.send({msg:"User not found"})
   }
-});
+  else{
+    let isMatch = await bcrypt.compare(passWord,user.passWord)
+    if(!isMatch){
+    return res.send("Invalid credentials")
+  }
+  let token = jwt.sign({email:user.email,role:user.role},secreateKey)
+  console.log(token,"toeknnn");
+  // res.send("authorization",token)
+  return res.send("Login successfulyyyyy")
+
+  }
+})
+
+
+//Role Based Access Control (RBAC)
+app.get("/home", authorizeRole("user"), (req,res)=>{
+  res.send("Welcome to admin home page")
+})
+
+function authorizeRole(requiredRole){
+  return (req,res,next)=>{
+    const Token = req.headers.authorization
+    console.log(Token,"token");
+
+    if(!Token){
+      return res.send({msg:"No token provided"})
+    }
+    else{
+      let decoded = jwt.verify(Token,"JDNFNHIUWHFIWWIU")
+      console.log(decoded,"decoded");
+
+      if(decoded.role !== requiredRole){
+        return res.send({msg:"Access denied"})
+      }
+      else{
+        next()
+      }
+    }
+  }
+}
+
