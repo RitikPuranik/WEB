@@ -7,9 +7,10 @@ let userSchema=  new mongoose.Schema({
         type:String,
         enum:["user","admin"],
         default:"user"
-    }
+    },
+    resetToken: String,
+  resetTokenExpiry: Date,
 })
 
- let User=    mongoose.model("User",userSchema)
-
- module.exports=User
+let User=    mongoose.model("User",userSchema)
+module.exports=User
