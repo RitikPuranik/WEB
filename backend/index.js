@@ -339,6 +339,13 @@ app.use(express.json())
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const cors = require("cors");
+
+app.use(cors({
+  origin: "http://localhost:5173", // your frontend origin
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 
 const User= require('./user')
